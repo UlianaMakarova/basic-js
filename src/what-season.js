@@ -17,7 +17,7 @@ function getSeason(date) {
   if (typeof date === 'undefined')
   return "Unable to determine the time of year!"
   if (Object.prototype.toString.call(date) !== '[object Date]' ||  date==Date.prototype.toString.call(new Date()))
-  return "Invalid date!"
+  throw new Error('Invalid date!')
   winter = [12,1,2]
   spring = [3,4,5]
   summer = [6,7,8]
@@ -32,7 +32,7 @@ function getSeason(date) {
   else if (autumn.indexOf(month) != -1)
     return "autumn"
   else 
-  return "Invalid date!"
+   throw new Error('Invalid date!')
   }
 
 module.exports = {
